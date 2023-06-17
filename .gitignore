@@ -1,0 +1,7 @@
+#stuff
+node_modules
+out
+#src/needed
+src/unknown
+yarn-error.log
+yarn.lock

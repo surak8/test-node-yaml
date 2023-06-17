@@ -1,0 +1,46 @@
+
+# Transport for sending message
+transport:
+    service: Gmail
+    auth:
+        user: thisdavej@gmail.com
+        pass: mypassword
+
+management: &management
+    - jgarcia1@unc.edu: Jean Garcia
+    - agriffin2@timesonline.co.uk: Anthony Griffin
+    - ebowman3@google.com.au: Earl Bowman
+
+operations: &operations
+    - nhall5@ezinearticles.com: Nicholas Hall
+    - bwelch6@upenn.edu: Betty Welch
+    - kburke7@bloglovin.com: Kimberly Burke
+    - mross8@creativecommons.org: Maria Ross
+    - lmorgan9@pcworld.com: Lonnie Morgan
+
+marketing: &marketing
+    - rstanley4@printfriendly.com: Ruby Stanley
+    - jlyncha@dion.ne.jp: Joseph Lynch
+    - emcdonaldb@ezinearticles.com: Edward Mcdonald
+    - dgeorgec@aol.com: Deborah George
+
+message_defaults: &message_defaults
+    from: info@acme.com
+
+management_message:
+    <<: *message_defaults
+    recipients:
+        <<: *management
+
+operations_message:
+    <<: *message_defaults
+    from: operations@acme.com
+    recipients:
+        <<: *operations
+
+all_employees_message:
+    <<: *message_defaults
+    recipients:
+        <<: *management
+        <<: *operations
+        <<: *marketing

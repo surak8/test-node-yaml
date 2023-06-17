@@ -1,0 +1,413 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"version": "1.0.0",
+		"title": "node-query-generator",
+		"description": "describe API for 'node-query-generator.",
+		"contact": {
+			"name": "rik",
+			"email": "rcousens@colt.com"
+		},
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "http://localhost:9999",
+			"description": "description of server"
+		},
+		{
+			"url": "http://{hostname}:{port}/{basePath}",
+			"description": "description of this server (multi)",
+			"variables": {
+				"hostname": {
+					"enum": [
+						"localhost",
+						"COLT-SERVICES"
+					],
+					"default": "localhost",
+					"description": "description of default"
+				},
+				"port": {
+					"enum": [
+						9998,
+						9999
+					],
+					"default": 9999
+				},
+				"basePath": {
+					"default": "v1",
+					"description": "description of basePath."
+				}
+			}
+		}
+	],
+	"paths": {
+		"/dbo/allEmployees": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "retrieve all employees.",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/dbo/deleteEmployee/{lastName}": {
+			"delete": {
+				"summary": "*** missing summary ***",
+				"description": "Delete an employee",
+				"parameters": [
+					{
+						"name": "lastName",
+						"in": "path",
+						"description": "description of parameter 'lastName'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/dbo/employeesByLastName/{lastName}": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "return employees by last-name.",
+				"parameters": [
+					{
+						"name": "lastName",
+						"in": "path",
+						"description": "description of parameter 'lastName'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/dbo/findEmployeeByFirstAndLast": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "return employee by first and last-name.",
+				"parameters": [
+					{
+						"name": "firstName",
+						"in": "query",
+						"description": "description of parameter 'firstName'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "lastName",
+						"in": "query",
+						"description": "description of parameter 'lastName'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/dbo/newEmployee": {
+			"post": {
+				"summary": "*** missing summary ***",
+				"description": "Create a new employee.",
+				"requestBody": {
+					"description": "request body description",
+					"required": true,
+					"content": {
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"badgeNum": {
+										"type": "string"
+									},
+									"clockNum": {
+										"type": "string"
+									},
+									"firstName": {
+										"type": "string"
+									},
+									"lastName": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/dbo/updateEmployeeShiftNumber": {
+			"post": {
+				"summary": "*** missing summary ***",
+				"description": "Update an employee's shift-number.",
+				"requestBody": {
+					"description": "request body description",
+					"required": true,
+					"content": {
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"firstName": {
+										"type": "string"
+									},
+									"lastName": {
+										"type": "string"
+									},
+									"shiftNum": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/general/showConnection": {
+			"get": {
+				"summary": "a summary",
+				"description": "a description",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/handguns/models/{modelName}": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "show 1000 models.",
+				"parameters": [
+					{
+						"name": "modelName",
+						"in": "path",
+						"description": "description of parameter 'modelName'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/operations/allOperations": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "*** missing description ***",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/operations/createOperation": {
+			"post": {
+				"summary": "*** missing summary ***",
+				"description": "create an operation",
+				"requestBody": {
+					"description": "request body description",
+					"required": true,
+					"content": {
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"opDescription": {
+										"type": "string"
+									},
+									"opDisplayName": {
+										"type": "string"
+									},
+									"opModBy": {
+										"type": "string"
+									},
+									"opName": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/operations/deleteOperation/{opOperationId}": {
+			"delete": {
+				"summary": "*** missing summary ***",
+				"description": "delete an operation.",
+				"parameters": [
+					{
+						"name": "opOperationId",
+						"in": "path",
+						"description": "description of parameter 'opOperationId'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/operations/singleOperation/{opOperationId}": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "find operation by ID.",
+				"parameters": [
+					{
+						"name": "opOperationId",
+						"in": "path",
+						"description": "description of parameter 'opOperationId'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/operations/updateOperation": {
+			"post": {
+				"summary": "*** missing summary ***",
+				"description": "update an operation",
+				"requestBody": {
+					"description": "request body description",
+					"required": true,
+					"content": {
+						"application/x-www-form-urlencoded": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"opDescription": {
+										"type": "string"
+									},
+									"opModBy": {
+										"type": "string"
+									},
+									"opName": {
+										"type": "string"
+									},
+									"opOperationId": {
+										"type": "string"
+									},
+									"DisplayName": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/sys/betterSysObjectsByType/{objectType}": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "user-friendly version.",
+				"parameters": [
+					{
+						"name": "objectType",
+						"in": "path",
+						"description": "description of parameter 'objectType'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		},
+		"/sys/simpleSysObjectsByType/{objectType}": {
+			"get": {
+				"summary": "*** missing summary ***",
+				"description": "all fields.",
+				"parameters": [
+					{
+						"name": "objectType",
+						"in": "path",
+						"description": "description of parameter 'objectType'",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		}
+	}
+}

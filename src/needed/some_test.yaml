@@ -1,0 +1,9 @@
+root:
+  f1: f1-val
+  f2: 1
+  f3: 1
+  f4: true
+  f5: false
+  f6: 2023-06-17T21:21:58.527Z
+  f7:
+    obj_field_1: val-1

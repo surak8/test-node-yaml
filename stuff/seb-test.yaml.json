@@ -1,0 +1,77 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"version": "1.0.0",
+		"title": "seb-test",
+		"description": "describe API for 'seb-test.",
+		"contact": {
+			"name": "rik",
+			"email": "rcousens@colt.com"
+		},
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"servers": [
+		{
+			"url": "http://{hostname}:{port}/{prefix}/{basePath}",
+			"description": "description of this server (multi)",
+			"variables": {
+				"hostname": {
+					"default": "localhost",
+					"description": "description of default"
+				},
+				"prefix": {
+					"default": "seb-test",
+					"description": "some description"
+				},
+				"port": {
+					"enum": [
+						"9998",
+						"9999"
+					],
+					"default": "9999"
+				},
+				"basePath": {
+					"default": "v1",
+					"description": "description of basePath."
+				}
+			}
+		}
+	],
+	"paths": {
+		"/operations/findUserByGuid": {
+			"get": {
+				"summary": "some summary",
+				"description": "some description",
+				"parameters": [
+					{
+						"name": "isActive",
+						"in": "query",
+						"description": "description of parameter 'isActive'",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"default": 1
+						}
+					},
+					{
+						"name": "userGuid",
+						"in": "query",
+						"description": "description of parameter 'userGuid'",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"default": "F366F913-3416-4BE3-9648-DBF3C71CA826"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		}
+	}
+}
