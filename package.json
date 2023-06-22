@@ -13,7 +13,7 @@
 		"start": "node index.js",
 		"clean": "yarn clean:0&&yarn clean:1&&yarn clean:2&&yarn clean:3&&yarn clean:4&&yarn clean:5",
 		"clean:0": "IF EXIST node_modules RD /Q/S node_modules",
-		"clean:1": "IF EXIST package-lock.json DEL /Q package-lock.json",
+		"clean:1": "IF EXIST package-lock.json DEL /Q pa  ckage-lock.json",
 		"clean:2": "IF EXIST yarn.lock DEL /Q yarn.lock",
 		"clean:3": "IF EXIST yarn-error.log DEL /Q yarn-error.log",
 		"clean:4": "IF EXIST json\\node-query-generator.yaml.yaml DEL /Q json\\node-query-generator.yaml.yaml",

@@ -1,0 +1,5 @@
+- riktest: true
+- config:
+  - operations:
+    - riktest2: true
+  - operations_message: "op-msg"

@@ -1,7 +1,8 @@
+#src/needed
 #stuff
 node_modules
 out
-#src/needed
 src/unknown
+stuff.save
 yarn-error.log
 yarn.lock

@@ -1,3 +1,8 @@
 git remote add origin https://github.com/surak8/test-node-yaml.git
 git branch -M main
 git push -u origin main
+
+C:\js\rik_dev\yaml\test-node-yaml\src\index.js
+C:\js\rik_dev\yaml\test-node-yaml\src\unknown\test2.js
+C:\js\rik_dev\yaml\test-node-yaml\src\unknown\tester.js
+C:\js\rik_dev\yaml\test-node-yaml\src\working\email-tester.js

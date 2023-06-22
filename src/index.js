@@ -155,7 +155,8 @@ async function rewriteAsYaml(afile,outDir){
 async function main(){
 	try {
 		await readAFile(FNAME1); // dump contents of a single file.
-		await readAFile(path.resolve('./stuff/json/seb-test.yaml.json'));
+		//await readAFile(path.resolve('./stuff/json/seb-test.yaml.json'));
+		await readAFile(path.resolve('./stuff/seb-test.json'));
 		await writeFruits('./out/fruits.rik.yaml');	// write a yaml-file.
 		await writeYamlFile();
 		await writeAProject('./out/riktest.yaml');

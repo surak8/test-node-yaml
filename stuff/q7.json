@@ -1,0 +1,76 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"version": "1.0.0",
+		"title": "q7",
+		"description": "describe API for 'q7.",
+		"contact": {
+			"name": "rik",
+			"email": "rcousens@colt.com"
+		},
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"servers": {
+		"url": "http://{hostname}:{port}/{prefix}/{basePath}",
+		"description": "description of this server (multi)",
+		"variables": {
+			"hostname": {
+				"default": "localhost",
+				"description": "description of default"
+			},
+			"prefix": {
+				"default": "q7",
+				"description": "some description"
+			},
+			"port": {
+				"enum": [
+					"9998",
+					"9999",
+					"5127"
+				],
+				"default": "5127"
+			},
+			"basePath": {
+				"default": "v7",
+				"description": "description of basePath."
+			}
+		}
+	},
+	"paths": {
+		"/dbo/findEmployeeByFirstAndLast": {
+			"get": {
+				"summary": "summary here.",
+				"description": "return employee by first and last-name.",
+				"parameters": [
+					{
+						"name": "firstName",
+						"in": "query",
+						"description": "description of parameter 'firstName'",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"default": "rik"
+						}
+					},
+					{
+						"name": "lastName",
+						"in": "query",
+						"description": "description of parameter 'lastName'",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"default": "cousens"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "response-description"
+					}
+				}
+			}
+		}
+	}
+}
